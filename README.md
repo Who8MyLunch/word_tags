@@ -1,4 +1,4 @@
-word_tag_fun
-============
+Word_Tags
+==========
 
 Text processing example
