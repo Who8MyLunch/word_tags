@@ -12,10 +12,20 @@ in a sentence.
 
 """
 
-# Files.
-
+# Load tag/word maps from file.
 fname_config = 'config.json'
-
 mapping = json_io.read(fname_config)
 
-words = word_set.Word_Set(mapping)
+# Build a tag matcher class with loaded tag/word mapping.
+tag_matcher = tagger.Tagger(mapping)
+
+# Demonstrate with a sentence.
+sentence = 'I like to feed an apple and a carrot to the one horse while the cow eats asparagus.'
+
+
+a, b, c, d = tag_matcher.process(sentence)
+
+print('Original: {:s}\n'.format(a))
+print('tagged:   {:s}\n'.format(b))
+print('untagged: {:s}\n'.format(c))
+print('Final:    {:s}\n'.format(d))

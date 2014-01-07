@@ -9,33 +9,31 @@ class Word_Set(object):
 
         Parameters
         ----------
-
         mapping : dict, each key in mapping is a class tag.  The item for each tag is a sequence
                         of words that belong to that class.
         """
 
-        self.mapping = {}
+        self._mapping = {}
         for tag, words in mapping.items():
             tag = tag.upper()
 
             words = [w.lower() for w in words]
             words = set(words)
 
-            self.mapping[tag] = words
+            self._mapping[tag] = words
 
     @property
     def tags(self):
         """Helpful property returning tags managed by this class.
         """
-        return self.mapping.keys()
+        return self._mapping.keys()
 
-    def word_match(self, word_test):
+    def match(self, word_test):
         """Find tag that maps to a set of words that contains the input word.
         Return found tag, otherwise return None.
 
         Parameters
         ----------
-
         word_test : string, a word that might belong to a class.
         """
 
@@ -43,7 +41,7 @@ class Word_Set(object):
         word_test = word_test.strip().lower()
 
         # Look for a match.
-        for tag, words in self.mapping.items():
+        for tag, words in self._mapping.items():
             if word_test in words:
                 return tag
 
