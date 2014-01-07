@@ -2,7 +2,7 @@
 from setuptools import setup, find_packages
 
 
-entry_points = {'console_scripts': ['wanderbits = wanderbits:main']}
+entry_points = {'console_scripts': ['word_tags = word_tags:main']}
 
 with open('README.md', 'r') as fi:
     long_description = fi.read()
