@@ -51,7 +51,7 @@ Testing for Word_Set: confirm that it can read its config data from a file.  Als
 is able to perform word matching for a number of scenarios: Class tag word is present/not present
 in the test sentence.  Confirm method is robust to cases where sentence is empty, or other ...?
 
-## Class_Tagger
+## Tagger
 
 This class is to be initialized with config data for various word set mappings.  Load config data.
 Create internal Word_Set to manage tag mapping.
@@ -61,7 +61,7 @@ pre-processing on string and split it up into a list of words.  For each word in
 call tag matching method on Word_Set object.  Maintain appropriate data structures to output
 required sequence of four items.
 
-Testing for Class_Tagger: Confirm that it initializes itself.  Confirm that it can correctly split
+Testing for Tagger: Confirm that it initializes itself.  Confirm that it can correctly split
 up a sentence into discrete words.  Confirm that it does NOT barf with extra punctuation??
 Confirm that it does not barf with irregular whitespace, e.g. multiple space characters, tabs, etc.
 Confirm internal data storage is correct after running matching function.  Confirm output
